@@ -1,0 +1,13 @@
+{
+    "defaultSeverity": "error",
+    "extends": ["tslint:recommended"],
+    "jsRules": {},
+    "rules": {
+      "max-line-length": false,
+      "object-literal-sort-keys": false,
+      "max-classes-per-file": false,
+      "arrow-parens": false,
+      "completed-docs": [true, "classes", "methods", "functions", "interfaces", "enums"]
+    }
+  }
+  
