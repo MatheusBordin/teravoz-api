@@ -4,10 +4,15 @@ import app from "./app";
 import config from "./config";
 import router from "./config/routes";
 import { SocketService } from "./services/socket";
+import startMongoConnection from "./config/connection";
+
 
 // Create server
 const server = http.createServer(app);
 const io = socketio(server);
+
+// Start databases connections
+startMongoConnection();
 
 // Initialize socket
 SocketService.start(io);

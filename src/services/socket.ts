@@ -3,6 +3,12 @@ import { EventType } from "../types/event-types";
 import { ICallEntity } from "../entities/call";
 import { emitterService } from "./emitter";
 
+/**
+ * Real-time service.
+ *
+ * @export
+ * @class SocketService
+ */
 export class SocketService {
   /**
    * Start socket service.
