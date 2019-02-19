@@ -10,6 +10,10 @@ import { CallStatus } from "../types/call-status";
  */
 export interface ICallEntity extends Document {
     teravozId: string;
-    userId: string;
     status: CallStatus; 
+    queue: string;
+    userId: string;
+    userNumber: string;
+    receptionistNumber: string;
+    receptionist: string;
 }

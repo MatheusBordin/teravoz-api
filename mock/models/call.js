@@ -15,8 +15,9 @@ class Call {
      * @param {*} callNumber Call number of user
      * @memberof Call
      */
-    constructor(type, number, callNumber) {
+    constructor(type, queue, number, callNumber) {
         this.type = type;
+        this.queue = queue;
         this.number = number;
         this.callNumber = callNumber;
         this.callId = uuidv1();
@@ -37,6 +38,13 @@ class Call {
             return new CallEvent(this.type, this.callNumber, this.callId);
         } else if (this.type === 'call.waiting') {
             this.type = 'actor.entered';
+            
+            if (this.queue === '900') {
+                this.number = '*2900';
+            } else if (this.queue === '901') {
+                this.number = '*2901';
+            }
+
             return new ActorEvent(this.type, this.number, this.callId);
         } else if (this.type === 'actor.entered') {
             this.type = 'call.ongoing';

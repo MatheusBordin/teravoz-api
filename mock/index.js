@@ -25,19 +25,19 @@ actionsService.init();
 // Routes
 app.post('/call', async (req, res) => {
     const users = await userRepository.find({}).exec();
-    const userIdx = Math.floor(Math.random() * users.length);
-    const user = users[userIdx];
-    const call = new Call('call.new', null, user.callNumber);
+    const phones = [...users.map(x => x.callNumber), '123123', '345345', '456456', '293847'];
+    const phoneIdx = Math.floor(Math.random() * phones.length);
+    const phone = phones[phoneIdx];
+    const call = new Call('call.new', null, null, phone);
 
-    actionsService.calls.push(call);
+    actionsService.addCall(call);
 
     res.json(call);
 });
 
 app.post('/actions', (req, res) => {
     const delegate = req.body;
-    const call = actionsService.calls.find(x => x.callId === delegate.call_id);
-    call.number = delegate.destination;
+    actionsService.updateWithDelegate(delegate);
 
     res.sendStatus(200);
 });
