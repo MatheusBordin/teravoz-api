@@ -8,8 +8,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc -w",
-    "start": "nodemon dist/www.js",
-    "mock": "nodemon mock/index.js"
+    "start": "nodemon dist/www.js"
   },
   "devDependencies": {
     "@types/cors": "^2.8.4",
@@ -20,8 +19,7 @@
     "@types/node-fetch": "^2.1.6",
     "@types/socket.io": "^2.1.2",
     "nodemon": "^1.18.10",
-    "typescript": "^3.3.3",
-    "uuid": "^3.3.2"
+    "typescript": "^3.3.3"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
