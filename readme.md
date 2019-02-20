@@ -25,3 +25,5 @@ Para rodar os testes, execute o comando abaixo:
 ```sh
 yarn test
 ```
+
+**OBS**: Os testes requerem que o container do mongo esteja rodando, para isso rode: `docker-compose start mongo`.
