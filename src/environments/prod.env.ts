@@ -4,5 +4,5 @@ export const config: IConfig = {
     name: "production",
     port: 4000,
     teravozURI: "",
-    mongoURI: "<PROD>"
+    mongoURI: "mongodb://mongo:27017/teravoz"
 };
