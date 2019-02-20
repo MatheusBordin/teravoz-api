@@ -48,7 +48,7 @@ export class TeravozIntegrationService {
         const user = await userRepository.findOne({ callNumber: event.their_number }).exec();
         const call = new callRepository(<ICallEntity> {
             status: event.type,
-            queue: !!user ? "200" : "201",
+            queue: !!user ? "901" : "900",
             teravozId: event.call_id,
             userId: !!user ? user._id : null,
             userNumber: event.their_number

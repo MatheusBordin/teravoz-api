@@ -10,7 +10,5 @@ import { Document } from "mongoose";
 export interface IUserEntity extends Document {
     name: string;
     email: string;
-    cpf: number;
-    birthday: Date;
     callNumber: string;
 }

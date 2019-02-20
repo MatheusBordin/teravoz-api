@@ -4,8 +4,6 @@ import { IUserEntity } from "../entities/user";
 const schema = new Schema({
     name: String,
     email: String,
-    cpf: Number,
-    birthday: Date,
     callNumber: String
 }, {
     timestamps: true

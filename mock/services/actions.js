@@ -5,7 +5,7 @@ module.exports = {
     // All calls.
     calls: [],
     // Init process.
-    init: function(time = 2000) {
+    init: function(time = 4000) {
         setInterval(() => this.process(), time);
     },
     // Process calls in stack.
@@ -36,6 +36,7 @@ module.exports = {
     updateWithDelegate: function(delegate)  {
         const call = this.calls.find(x => x.callId === delegate.call_id);
         call.queue = delegate.destination;
+
         const event = call.getNextEvent();
 
         this.send(event);

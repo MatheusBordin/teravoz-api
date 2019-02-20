@@ -1,11 +1,13 @@
 import { Router } from "express";
-import { heartbeat } from "../controllers/heartbeat";
-import { teravoz } from "../controllers/teravoz";
+import { heartbeat as heartbeatRouter } from "../controllers/heartbeat";
+import { teravoz as teravozRouter } from "../controllers/teravoz";
+import { userRouter } from "../controllers/user";
 
 // Configure routes.
 const router = Router();
-router.use(heartbeat);
-router.use(teravoz);
+router.use(heartbeatRouter);
+router.use(teravozRouter);
+router.use(userRouter);
 
 // Export router.
 export default router;

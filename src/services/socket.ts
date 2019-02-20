@@ -2,6 +2,7 @@ import { Server, Socket } from "socket.io";
 import { EventType } from "../types/event-types";
 import { ICallEntity } from "../entities/call";
 import { emitterService } from "./emitter";
+import { callRepository } from "../repositories/call";
 
 /**
  * Real-time service.
@@ -24,6 +25,7 @@ export class SocketService {
   }
 
   constructor(private readonly io: Server) {
+    this.listenEvents();
   }
 
   /**
@@ -51,9 +53,11 @@ export class SocketService {
    * @memberof SocketService
    */
   public onConnect(socket: Socket) {
-    // Todo: Send real calls
-    socket.emit(EventType.ListCalls, []);
     console.log('User connected');
+    
+    callRepository.find({}).then(data => {
+      socket.emit(EventType.ListCalls, data);
+    });
   }
 
   /**
