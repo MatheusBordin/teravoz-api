@@ -12,7 +12,7 @@ import { emitterService } from "../../../src/services/emitter";
 // Create server
 const server = http.createServer(app);
 const io = socketio(server);
-server.listen(4000);
+server.listen(config.port);
 
 beforeEach(() => {
   emitterService.removeAllListeners();

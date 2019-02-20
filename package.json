@@ -8,7 +8,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc -w",
-    "start": "nodemon dist/www.js",
+    "start": "nodemon dist/src/www.js",
     "test": "jest --no-cache"
   },
   "devDependencies": {
